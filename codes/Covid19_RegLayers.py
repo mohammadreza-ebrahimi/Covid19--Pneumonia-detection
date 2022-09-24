@@ -127,7 +127,7 @@ class covidconv(nn.Module):
         self.pool2 = nn.MaxPool2d(2, 2)
         self.conv3 = nn.Conv2d(in_channels=interm_channel2, out_channels=interm_channel3, kernel_size=3, padding=1)
         self.conv4 = nn.Conv2d(in_channels=interm_channel3, out_channels=out_channel, kernel_size=3, padding=1)
-        
+	# We can also use Dropout() here
         self.use_bn = use_bn
         if use_bn:
             self.bn1 = nn.BatchNorm2d(interm_channel1)
